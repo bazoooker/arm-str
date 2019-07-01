@@ -1,19 +1,10 @@
 .catalog-list {
-	.col-3 {
-		border-right: 1px solid #dfdfdf;
-		&:last-child {
-			border-right: 0;
-		}
-
-		a:last-child {
-			margin-bottom: 0;
-		}
-
-		.catalog-link:first-child {
-			padding-top: 0;
-		}
-		.catalog-link:last-child {
-			padding-bottom: 0;
-		}
+	.container {
+		@include flex-row(nowrap,space-between,flex-start);
 	}
+}
+
+.catalog-list__sidebar {
+	flex: 1 1 35%;
+	padding: 0 40px 0 0;
 }

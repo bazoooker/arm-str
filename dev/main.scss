@@ -11,9 +11,9 @@
 @import "libs/bootstrap-grid/bootstrap-grid.min";
 @import "libs/swiper/swiper";
 @import "libs/animate/animate";
+@import "libs/lightbox/lightbox";
 // @import "libs/grtyoutube-popup/grtyoutube-popup";
 // @import "libs/animateion-rangeslider/animateion-rangeslider";
-@import "libs/lightbox/lightbox";
 // @import "libs/animate/animate";
 
 
@@ -27,28 +27,28 @@
 @import "block/link/link";
 
 @import "block/header/header";
-@import "block/footer/footer";
-@import "block/content/content";
+// @import "block/footer/footer";
+// @import "block/content/content";
 // @import "block/content-slider/content-slider";
-@import "block/header-sticky/sticky-header";
+// @import "block/header-sticky/sticky-header";
 
 @import "block/hero/hero";
-@import "block/section/section";
+// @import "block/section/section";
 
 @import "block/logo/logo";
-@import "block/icon-text/icon-text";
-@import "block/made-by/made-by";
+// @import "block/icon-text/icon-text";
+// @import "block/made-by/made-by"/;
 
-@import "block/menu/menu";
+// @import "block/menu/menu";
 @import "block/nav/nav";
 
 // @import "block/map/map";
-@import "block/modal/modal";
-@import "block/modal/overlay";
+// @import "block/modal/modal";
+// @import "block/modal/overlay";
 
 // @import "block/partner-thumb/partner-thumb";
-@import "block/gallery/gallery";
-@import "block/gallery-slide/gallery-slide";
+// @import "block/gallery/gallery";
+// @import "block/gallery-slide/gallery-slide";
 // @import "block/hero-slider/hero-slider";
 // @import "block/socials/socials";
 // @import "block/clipped-img/clipped-img";
@@ -62,7 +62,7 @@
 // @import "block/big-nums/big-nums";
 // @import "block/timeline/timeline";
 // @import "block/timeline-item/timeline-item";
-@import "block/preloader/preloader";
+// @import "block/preloader/preloader";
 
 
 
@@ -76,7 +76,7 @@
 // @import "block/breadcrumbs/breadcrumbs";
 // @import "block/cabinet-item/cabinet-item";
 // @import "block/catalog-link/catalog-link";
-// @import "block/catalog-list/catalog-list";
+@import "block/catalog-list/catalog-list";
 // @import "block/catalog-nav/catalog-nav";
 // @import "block/catalog-slider/catalog-slider";
 // @import "block/category/category";
@@ -114,12 +114,12 @@
 // @import "block/product-feature/product-feature";
 // @import "block/product-full/product-full";
 // @import "block/product-lead/product-lead";
-// @import "block/product-list/product-list";
+@import "block/product-list/product-list";
 // @import "block/product-list-controls/product-list-controls";
 // @import "block/product-logo/product-logo";
 // @import "block/product-modal/product-modal";
 // @import "block/products/products";
-// @import "block/product-thumb/product-thumb";
+@import "block/product-thumb/product-thumb";
 // @import "block/quantity-counter/quantity-counter";
 // @import "block/search/search";
 // @import "block/search-form/search-form";
@@ -137,6 +137,6 @@
 // @import "block/view/view";
 // @import "block/tel/tel";
 // @import "block/link-social/link-social";
-@import "block/wrapper/wrapper";
+// @import "block/wrapper/wrapper";
 
 

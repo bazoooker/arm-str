@@ -1,18 +1,35 @@
 .link {
-	display: block;
+	display: inline-block;
 	position: relative;
 	margin: 0;
 	text-decoration: none;
 	&:hover {text-decoration: none;}
 }
 
-
-@media screen and (max-width: 992px) {
-
-		
+.link_tel {
+	font-size: 20px;
+	font-weight: 900;
+	color: black;
 }
 
-
-@keyframes anim-link-download {
-
+.link_callback {
+	font-size: 13px;
+	font-style: italic;
+	i {
+		font-size: .75em;
+	}
 }
+
+.link_dl-pdf,
+.link_dl-doc {
+	padding: 10px 0 10px 50px;
+	text-decoration: underline;
+
+	&::before {
+		@include pseudo(50%,auto,auto,0,28px,39px);
+		transform: translateY(-50%);
+		@include bg-contain;
+	}
+}
+.link_dl-pdf::before {background-image: url(/img/icons/icon-file-pdf.png)}
+.link_dl-doc::before {background-image: url(/img/icons/icon-file-doc.png)}
