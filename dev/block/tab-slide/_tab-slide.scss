@@ -1,0 +1,9 @@
+.tab-slide {
+	transition: 500ms;
+}
+.tab-slide_hidden {
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transform: translateY(20px);
+}

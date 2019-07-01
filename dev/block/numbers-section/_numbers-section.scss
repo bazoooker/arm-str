@@ -1,0 +1,34 @@
+.numbers-section {
+	position: relative;
+}
+.numbers-section__path {
+    position: absolute;
+    // width: 1202px;
+    // height: 284px;
+    width: 2000px;
+    height: 374px;
+    left: 0%;
+    top: 0%;
+    // transform: translateX(-50%);
+    z-index: -2;
+}
+.number-section__floating-boat {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	background: red;
+}
+
+.numbers-section__boat {
+    position: absolute;
+    top: -71px;
+    left: -32px;
+    width: 76px;
+    height: 76px;
+    // background-color: red;
+    background-image: url(/img/icons/boat-blue.svg);
+    @include bg-contain;
+    transform: rotate(20deg);
+}

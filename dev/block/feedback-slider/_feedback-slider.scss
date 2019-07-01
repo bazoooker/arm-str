@@ -1,0 +1,25 @@
+.feedback-slider {
+	padding: 5px;
+	margin-bottom: 40px;
+}
+.feedback-slider__nav {
+	height: 41px;
+	@include flex-row(nowrap,center,center);
+}
+.feedback-slider__nav-btn {
+	position: static;
+	@include flex-row(nowrap,center,center);
+	width: 41px;
+	height: 41px;
+	border-radius: 50%;
+	margin: 0 15px;
+	cursor: pointer;
+	box-shadow: 0px 0px 20px rgba(38, 84, 118, 0.2);
+	background-color: #fff;
+	transition: 300ms;
+	background: none;
+	&:hover {
+		color: #fff;
+		background-color: #F76C3B;
+	}
+}

@@ -1,0 +1,20 @@
+
+// block
+.made-by {
+    position: relative;
+    display: inline-block;
+    color: #fff !important;
+    transition: 300ms;
+    a,
+    span {
+        color: #fff;
+        transition: 300ms;
+    }
+    &:hover,
+    &:hover a, 
+    &:hover span {
+        color: $color_main !important;
+        text-decoration: none;
+    }
+}
+

@@ -1,0 +1,9 @@
+.timeline {
+	@include flex-row(nowrap,flex-start,flex-start);
+}
+
+@media screen and (max-width: 992px) {
+	.timeline {
+		flex-wrap: wrap;
+	}
+}

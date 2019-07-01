@@ -1,0 +1,16 @@
+.read-more {}
+.read-more__link,
+.read-more__link:visited, {
+	display: block;
+	color: $color_main;
+	margin-bottom: 20px;
+	i {transition: 300ms;}
+	
+}
+.read-more__link_active {
+	color: #47626A !important;
+	i {
+		transform: rotate(180deg);
+	}
+}
+.read-more__content {}

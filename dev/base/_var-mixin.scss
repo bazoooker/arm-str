@@ -1,0 +1,120 @@
+
+// blue
+$color_main: #FF5E3A; 
+$color_black: #373435;
+$color_gray: #707070;
+$russo: 'Russo One';
+$roboto: 'Roboto';
+
+
+
+@mixin flex-col($wrap, $jusify-content, $align-items) {
+    display: flex;
+    flex-flow: column $wrap;
+
+    justify-content: $jusify-content;
+    align-items: $align-items;
+}
+@mixin flex-row($wrap, $jusify-content, $align-items) {
+    display: flex;
+    flex-flow: row $wrap;
+
+    justify-content: $jusify-content;
+    align-items: $align-items;
+}
+
+@mixin pseudo {
+	position: absolute;
+	content: '';
+}
+
+@mixin bg-contain {
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@mixin bg-cover {
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin gr-red {
+    background: linear-gradient(90deg, #ED4343 0%, #F45933 100%);
+}
+@mixin gr-blue {
+    background: linear-gradient(90deg, #3694FE 0%, #3DD4E1 100%);
+}
+@mixin gr-green {
+    background: linear-gradient(90deg, #C1F6D7 0%, #EDF4D6 100%);
+}
+
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+@mixin grad {
+    background: #E94618;
+    background: linear-gradient(to top left, #E94618, #ED7B04);
+}
+@mixin grad-section {
+    background: linear-gradient(332.21deg, #FF3A3A 24.54%, rgba(255, 153, 58, 0.8) 73.65%, #FFDAAE 94.53%);
+}
+
+
+
+
+
+
+
+
+
+
+// fonts
+
+@mixin font-kit($base-font, $font-1200, $font-992, $font-768, $font-568) {
+    font-size: $base-font;
+
+    @media screen and (max-width: 1200px) {
+        font-size: $font-1200;
+    }
+
+    @media screen and (max-width: 992px) {
+        font-size: $font-992;
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: $font-768;
+    }
+
+    @media screen and (max-width: 568px) {
+        font-size: $font-568;
+    }
+}
+
+@mixin line-height-kit($base-line-height, $line-height-1200, $line-height-992, $line-height-768, $line-height-568) {
+    line-height: $base-line-height;
+
+    @media screen and (max-width: 1200px) {
+        line-height: $line-height-1200;
+    }
+
+    @media screen and (max-width: 992px) {
+        line-height: $line-height-992;
+    }
+
+    @media screen and (max-width: 768px) {
+        line-height: $line-height-768;
+    }
+
+    @media screen and (max-width: 568px) {
+        line-height: $line-height-568;
+    }
+}
+
+
+

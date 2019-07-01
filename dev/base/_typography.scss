@@ -1,0 +1,279 @@
+// USE THIS
+
+// @include font-kit(16px, 16px, 15px, 15px, 14px);
+// @include line-height-kit(1.15, 1.20, 1.3, 1.4, 1.55);
+
+
+// DOCUMENT
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    @include line-height-kit(1.6, 1.6, 1.7, 1.75, 1.85);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: $color_gray;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Russo One', sans-serif;
+    font-weight: 400;
+    color: $color_gray;
+}
+
+
+
+h1 {
+    font-size:  6rem;
+    @include line-height-kit(1.15, 1.20, 1.25, 1.3, 1.35);
+    margin: 0 0 3rem 0;
+}
+
+h2 {
+    font-size:  5rem;
+    @include line-height-kit(1.25, 1.3, 1.35, 1.4, 1.55);
+    margin: 0 0 2.8rem 0;
+}
+
+h3 {
+    font-size:  4rem;
+    @include line-height-kit(1.15, 1.20, 1.3, 1.4, 1.55);
+    margin: 0 0 2.6rem 0;
+}
+
+h4 {
+    font-size:  3rem;
+    @include line-height-kit(1.15, 1.20, 1.3, 1.4, 1.55);
+    margin: 0 0 2.4rem 0;
+}
+
+h5 {
+    font-size:  2rem;
+    @include line-height-kit(1.15, 1.20, 1.3, 1.4, 1.55);
+    margin: 0 0 2.2rem 0;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+a,
+a:visited {
+    color: $color_main;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover { 
+        text-decoration: underline;
+    }
+    &:focus,
+    &:active { 
+        background-color: transparent;
+    }
+
+}
+
+.text-big {
+    font-size: 2.5rem;
+    @include line-height-kit(1.4, 1.45, 1.5, 1.55, 1.65);
+}
+.text-brutal {
+    font-size: 2rem;
+    font-family: 'Russo One', sans-serif;
+}
+
+.text-center {text-align: center !important;}
+.text-uppercase {text-transform: uppercase !important;}
+.text-white {color: #fff !important;}
+.text-accent { color: $color_main !important; }
+
+
+
+
+
+
+// TABLES
+table {
+    width: 100%;
+    margin: 4rem 0;
+
+    thead {
+        font-weight: bold;
+        color: black !important;
+        text-transform: uppercase;
+        td {background-color: gray !important;}
+    }
+}
+
+p+table,
+ol+table,
+ul+table,
+ol+table {
+    margin: 3rem 0 4rem 0;
+}
+
+table tr {
+    @include line-height-kit(1.15, 1.20, 1.3, 1.4, 1.55);
+    position: relative;
+    td {
+        padding: 1rem 1.5rem;
+        transition: 300ms;
+    }
+    &:nth-child(even) {
+        td {
+            background-color: #efefef;
+        }
+    }
+    &:nth-child(odd) {
+        td {
+            background-color: transparent;
+        }
+    }
+}
+
+ul {
+    padding-left: 2px;
+    margin: 0 0 2rem 0;
+    li {
+        position: relative;
+        margin-bottom: 1rem;
+        padding: 0 0 0 2rem;
+        list-style: none;
+
+        &::before {
+            @include pseudo;
+            left: 3px;
+            top: 11px;
+            width: 5px;
+            height: 5px;
+            background-color: $color_main;
+
+        }
+
+
+        ul {
+            margin: 1.8rem 0 1.8rem 0;
+            li {
+                // поведение
+                padding: 0 0 0 3rem;
+                &::before {
+                    // поведение
+                    width: 8px;
+                    height: 8px;
+
+                    // стили
+                    background-color: gray;
+                }
+            }
+        }
+    }
+}
+
+
+ol{
+    padding-left: 0;
+    margin-left: 0px;
+    counter-reset: myCounter;
+    li{
+        position: relative;
+        margin-bottom: 10px;
+        padding: 0px 0 0 3px;
+        list-style: none;
+
+        &:before {
+          counter-increment: myCounter;
+          content:counter(myCounter);
+
+            // поведение
+          display: inline-block;
+          margin: 5px 10px;
+          width: 26px;
+          height: 26px;
+
+          // стили
+          background-color: gray;
+          color: black;
+          text-align: center;
+          line-height: 24px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+    }
+
+    ol{
+        margin: 1rem 0 1rem 3rem;
+        counter-reset: myCounter;
+        li{
+            &:before {
+              counter-increment: myCounter;
+              content:counter(myCounter);
+
+                // поведение
+              display: inline-block;
+              margin: 5px 10px;
+              width: 22px;
+              height: 22px;
+
+              // стили
+              background-color: transparent;
+              color: gray;
+              text-align: center;
+              line-height: 22px;
+              font-size: 16px;
+              font-weight: 600;
+            }
+        }
+    }
+}
+
+
+.hidden {
+    display: none;
+}
+@media screen and (max-width: 568px) {
+    .hidden-sm {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .hidden-md {
+        display: none !important;        
+    }
+}
+@media screen and (max-width: 992px) {
+    .hidden-lg {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .hidden-xl {
+        display: none !important;
+    }   
+}
+
+@media screen and (max-width: 1400px)   {
+    html { font-size: 58.5%; }
+    body { font-size: 1.75rem; }
+
+}
+@media screen and (max-width: 1200px)    {
+    html { font-size: 53.5%; }
+    body { font-size: 1.85rem; }
+
+}
+@media screen and (max-width: 992px)    {
+    html { font-size: 48.5%; }
+    body { font-size: 2rem; }
+
+}
+@media screen and (max-width: 768px)    {
+    html { font-size: 43.5%; }
+    body { font-size: 2.15rem; }
+
+}
+@media screen and (max-width: 414px)    {
+}
+@media screen and (max-width: 375px)    {}

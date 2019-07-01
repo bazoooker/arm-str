@@ -1,0 +1,19 @@
+.chart {
+	position: relative;
+	height: 100%;
+	min-height: 400px;
+	transition: 600ms;
+	&__container {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		width: 500px;
+		height: 500px;
+	}
+	&.not-visible {
+		opacity: 0;
+		transform: rotateX(-90deg) translateY(-600px);
+		transform-origin: 0 100%;
+	}
+}

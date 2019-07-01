@@ -1,0 +1,8 @@
+.tel {
+	color: #fff;
+	@include font-kit(24px,19px,16px,18px,20px);
+	a,span {color: #fff;}
+	a:hover {
+		text-decoration: none;
+	}
+}

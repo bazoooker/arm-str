@@ -1,0 +1,147 @@
+.user-options {
+	position: relative;
+	flex: 1 1 100%;
+	min-width: 100%;
+	@include flex-row(nowrap,space-between,center);
+	margin-left: 5rem;
+}
+
+.user-options__city {
+	flex: 0 0 205px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+	overflow: hidden;
+	padding: 8px 14px;
+	background-color: transparent;
+	outline: none;
+	border:none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	color: #fff;
+	cursor: pointer;
+	font-family: 'Russo One';
+	font-size: 1.5rem;
+	& > span {
+		color: $color_main;
+		text-decoration: underline;
+		text-decoration-style: dashed;
+		text-underline-position: under;
+	}
+	&:hover,
+	&.user-options__city_active {
+		background-color: #fff;
+		color: $color_gray;
+		box-shadow: 0 0 15px 0 rgba(0,0,0,.1);
+	}
+}
+.user-options__tel {
+	font-family: $russo;
+	font-size: 1.3rem;
+	flex: 1 0 20rem;
+	&visited{
+		color: #fff;
+		background-color: $color_main;
+
+	}
+	&:hover {
+		background-color: $color_black;
+	}
+	&:focus{
+		color: #fff;
+		background-color: $color_main;
+	}
+	&:active{
+		color: #fff;
+		background-color: $color_black;
+	}
+}
+
+
+.user-options__city-list {
+	@include flex-row(wrap,flex-start,flex-start);
+	position: absolute;
+	left: 0;
+	top: 50px;
+	width: 100%;
+	background-color: #fff;
+	padding: 2rem;
+	opacity: 0;
+	height: 0;
+	overflow: hidden;
+	transform: translateY(35px);
+	transition: all 0ms;
+	z-index: -1;
+	box-shadow: 0 0 15px 0 rgba(0,0,0,.1);
+}
+	.user-options__city-list_active {
+		// padding: 2rem;
+		opacity: 1;
+		height: auto;
+		transform: translateY(0);
+		z-index: 1;
+		transition: all 400ms;
+	}
+
+.user-options__city-option {
+	flex: 0 0 33%;
+	color: $color_gray;
+	font-size: 12px;
+	font-family: 'Roboto';
+	padding: 6px 0 6px 0;
+	margin: 0;
+	cursor:pointer;
+	transition: 300ms;
+	&:hover {
+		color: $color_main;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.user-options {
+		margin: 0;
+		// flex-wrap: wrap;
+		// flex-flow: row-reverse;
+		display: block;
+	}
+	.user-options__tel,
+	.user-options__city {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+
+	.user-options__city-list {
+		width: 200%;
+	    right: 0;
+	    left: auto;
+	    top: 75px;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.user-options__city {
+		display: none;
+	}
+	.user-options__tel {
+		font-size: 2rem;
+		animation: anim-tel 4s infinite;
+	}
+}
+
+
+
+@keyframes anim-tel {
+	0% {
+		transform: translateY(0);
+	}
+	5% {
+		transform: translateY(0px) scale(1.05);
+	}
+	10% {
+		transform: translateY(0px) scale(1);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}

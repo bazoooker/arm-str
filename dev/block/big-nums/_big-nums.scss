@@ -1,0 +1,57 @@
+.big-nums {
+	position: relative;
+}
+
+.big-nums__digit {
+	position: relative;
+	display: block;
+	padding: 0 0 3.7rem 0;
+	margin: 0 0 1.8rem 0;
+	color: $color_gray;
+	font-size: 7rem;
+	font-family: $russo;
+	line-height: .8;
+	transform-origin: left center;
+	&::before {
+		@include pseudo;
+		bottom: 0;
+		left: 0px;
+		width: 54px;
+	    height: 5px;
+	    background-color: $color_main;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.big-nums {
+		.col-md-4 {
+			margin-bottom: 4rem;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.big-nums {
+		&::before {
+			top: -6px;
+			left: -8px;
+			width: 420px;
+		    height: 100px;
+		    opacity: .06;
+		    font-size: 132px;
+		}
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.big-nums {
+		&::before {
+			top: 26px;
+			left: 0px;
+			width: 280px;
+		    height: 70px;
+		    opacity: .06;
+		    font-size: 85px;
+		}
+	}
+}

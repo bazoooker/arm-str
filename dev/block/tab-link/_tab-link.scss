@@ -1,0 +1,72 @@
+.tab-link {
+	position: relative;
+	padding: 0 0 20px 0;
+	margin: 0 22px 0 0;
+	@include flex-row(nowrap,flex-start,flex-start);
+	flex: 1 0 33%;
+	cursor: pointer;
+	&:last-child {margin-right: 0;}
+	&::before {
+		@include pseudo;
+		left: 55px;
+		bottom: 0px;
+		width: 30px;
+		height: 4px;
+		background: #47626A;		
+		border-radius: 4px;
+		transition: 450ms;
+	}
+	&:not(.tab-link_active):hover {
+		.tab-link__icon {
+			transform: translateY(-4px);
+		}
+	}
+	&:hover::before {width: 40px;}
+	&__icon {
+		position: relative;
+		flex: 0 0 40px;
+		width: 40px;
+		height: 40px;
+		margin: 0 14px 0 0;
+		border-radius: 50%;
+		box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+		background-size: 25px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		transition: 450ms;
+	}
+}
+
+.tab-link.tab-link_active {
+	color: #02CBF8;
+	&::before {width: 45px; background: #02CBF8;}
+}
+
+.tab-link__icon_raft-hard {background-image: url(/img/icons/icon-wave-1.png);}
+.tab-link__icon_raft-medi {background-image: url(/img/icons/icon-wave-2.png)}
+.tab-link__icon_raft-easy {background-image: url(/img/icons/icon-wave-3.png)}
+	.tab-link_active .tab-link__icon_raft-hard {background-image: url(/img/icons/icon-wave-1_active.png)}
+	.tab-link_active .tab-link__icon_raft-medi {background-image: url(/img/icons/icon-wave-2_active.png)}
+	.tab-link_active .tab-link__icon_raft-easy {background-image: url(/img/icons/icon-wave-3_active.png)}
+
+.tab-link__icon_boat-hard {background-image: url(/img/icons/icon-boat-1.png); background-size: 31px;}
+.tab-link__icon_boat-medi {background-image: url(/img/icons/icon-boat-2.png)}
+.tab-link__icon_boat-easy {background-image: url(/img/icons/icon-boat-3.png)}
+	.tab-link_active .tab-link__icon_boat-hard {background-image: url(/img/icons/icon-boat-1_active.png)}
+	.tab-link_active .tab-link__icon_boat-medi {background-image: url(/img/icons/icon-boat-2_active.png)}
+	.tab-link_active .tab-link__icon_boat-easy {background-image: url(/img/icons/icon-boat-3_active.png)}
+
+
+
+@media screen and (max-width: 1200px) 	{}
+@media screen and (max-width: 992px) 	{}
+@media screen and (max-width: 768px) 	{
+	.tab-link {
+		flex: 1 1 100%;
+		padding: 0 0 0px 0;
+		margin: 0 0 30px 0;
+	}
+}
+@media screen and (max-width: 568px) 	{}
+@media screen and (max-width: 414px) 	{}
+@media screen and (max-width: 375px) 	{}

@@ -1,0 +1,14 @@
+.partner-thumb {
+	text-align: center;
+	background: #FFFFFF;
+	padding: 35px;
+	box-shadow: 0px 0px 10px rgba(38, 84, 118, 0.2);
+	border-radius: 45px;
+	&__photo {
+		width: 155px;
+		height: 155px;
+		border-radius: 50%;
+		overflow: hidden;
+		margin: 0 auto 20px auto;
+	}
+}

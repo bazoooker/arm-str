@@ -1,0 +1,52 @@
+.accordeon {
+	&__label {
+		display: inline-block;
+		position: relative;
+		color: #0EAEAE;
+		margin: 0 0 40px 0;
+		cursor: pointer;
+		&::before {
+			@include pseudo;
+			width: 93%;
+			height: 1px;
+			left: 0;
+			bottom: 0;
+			border-bottom: 2px dotted;
+			transition: 450ms;
+		}
+		i.fa { transition: 450ms; }
+	}
+	&__content {}
+}
+
+.accordeon.accordeon_active {
+	.accordeon__label {
+		color: #47626A;
+		&::before {
+			@include pseudo;
+			transform: translateY(10px);
+			opacity: 0;
+		}
+		i.fa {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+
+@media screen and (max-width: 1200px) 	{}
+@media screen and (max-width: 992px) 	{}
+@media screen and (max-width: 768px) 	{}
+@media screen and (max-width: 568px) 	{
+	.accordeon__label {
+		// p {
+		// 	text-decoration: underline;
+		// 	text-decoration-style: dotted;
+		// }
+		&::before {
+			display: none;
+		}		
+	}
+}
+@media screen and (max-width: 414px) 	{}
+@media screen and (max-width: 375px) 	{}

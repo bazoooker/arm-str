@@ -1,0 +1,35 @@
+.message {
+	position: absolute;
+	transform: translateY(-101%);
+	@include flex-row(nowrap,center,center);
+	background-color: $color_main;
+	color: #fff;
+	padding: 15px 40px;
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    border-radius: 40px;
+    transition: 400ms;
+    h3,i {
+    	opacity: 0;
+		transform: translateY(-10px);
+    	color: #fff;
+    }
+
+}
+
+.message_visible {
+	transform: translateY(0%);
+	h3,i {
+		transition: 400ms;
+		// transition-delay: 2000ms;
+    	opacity: 1;
+		transform: translateY(0px);
+    	color: #fff;
+    }
+    h3 {transition-delay: 400ms;}
+    i {transition-delay: 200ms;}
+}

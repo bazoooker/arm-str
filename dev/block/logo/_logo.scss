@@ -1,0 +1,40 @@
+
+.logo {
+	display: inline-block;
+	height: 100%;
+	text-decoration: none;
+	background-image: url(/img/logo.svg); 
+	@include bg-contain;
+	z-index: 2;
+
+	&_header {
+		flex: 0 0 313px;
+		max-width: 313px; /*IE*/
+		margin: 0 140px 0 0;
+	}
+	&_header-sticky {}
+}
+@media screen and (max-width: 1200px) 	{
+	.logo.logo_header {
+		flex: 0 0 215px;
+	    max-width: 250px;
+	    margin: 0 50px 0 0;
+	}
+}
+@media screen and (max-width: 992px) 	{
+	.logo.logo_header {
+		flex: 0 0 165px;
+	    max-width: 160px;
+	    margin: 0 20px 0 0;
+	}
+}
+@media screen and (max-width: 768px) 	{}
+@media screen and (max-width: 568px) 	{
+	.logo.logo_header {
+		margin: 0;
+		flex: 0 0 165px;
+    	max-width: 165px;
+	}
+}
+@media screen and (max-width: 414px) 	{}
+@media screen and (max-width: 375px) 	{}

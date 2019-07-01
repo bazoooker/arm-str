@@ -1,0 +1,63 @@
+.sidebar {
+	position: fixed;
+	z-index: 3;
+	left: 0;
+	top: 0;
+	width: 82px;
+	height: 100%;
+	border-right: 1px solid rgb(255,255,255);
+	border-right: 1px solid rgba(255,255,255,.3);
+	@include flex-col(wrap,center,flex-start);
+	transition: 300ms;
+}
+
+.sidebar__num {
+	position: relative;
+	color: #fff;
+	font-family: 'Russo One';
+	font-size: 15px;
+	padding: 1.9rem;
+	margin:  .5rem 0 .5rem 1rem;
+	cursor: pointer;
+	opacity: .85;
+	transition: 300ms;
+
+	&::before {
+		@include pseudo;
+		background-color: $color_main;
+		height: 5px;
+		width: 0;
+		bottom: 1.5rem;
+		left: 1.8rem;
+		transition: 300ms;
+		transition-delay: 0ms;
+	}
+}
+
+.sidebar__num:hover {
+	opacity: 1;
+	&::before {
+		width: 41px;
+		transition-delay: 150ms;
+	}
+}
+
+.sidebar__num_active {
+	font-size: 3rem;
+}
+
+.sidebar.sidebar_black {
+	border-right: 1px solid rgba(0,0,0,.3);
+	.sidebar__num {
+		color: $color_black !important;
+	}
+}
+.sidebar.sidebar_black.sidebar_bg {
+	background-color: rgba(255,255,255,.6);
+}
+
+@media screen and (max-width: 992px) {
+	.sidebar {
+		display: none;
+	}
+}
