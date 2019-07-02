@@ -178,24 +178,6 @@ $(window).scroll(function() {
 
 
 
-        // открытие и закрытие корзины
-
-        $('.js-basket-controls').on('click', function() {
-            if( !$('.basket').hasClass('active') ) {
-                $('.basket').addClass('active');
-                $('.overlay_basket').fadeIn(300);
-                $('.page-wrapper').addClass('no-scroll');
-            } else {
-                $('.basket').removeClass('active');
-                $('.overlay_basket').fadeOut(300);
-                $('.page-wrapper').removeClass('no-scroll');
-            }
-        });
-
-
-
-
-
         // мобильное меню
         $('.js-open-mobile-menu').on('click', function() {
 
@@ -207,64 +189,6 @@ $(window).scroll(function() {
                 $('.page-wrapper').removeClass('no-scroll');
             }
         });
-
-
-
-
-
-
-        // красивое наведение на партнеров
-
-        $('.partners').on('mouseenter', function() {
-            $('.partners .partner-thumb').addClass('blurred');
-        });
-        $('.partners').on('mouseleave', function() {
-            $('.partners .partner-thumb ').removeClass('blurred');
-        });
-
-        $('.partners .partner-thumb').on('mouseenter', function() {
-            $(this).addClass('active');
-        });
-        $('.partners .partner-thumb').on('mouseleave', function() {
-            $(this).removeClass('active');
-        });
-
-
-
-
-
-
-        // сортировка товаров
-        $('.js-prod-sort').on('click', function() {
-            $('.js-prod-sort').removeClass('active');
-            $(this).addClass('active');
-        });
-
-
-        // вид вывода товаров
-        $('.js-prod-view').on('click', function() {
-            $('.js-prod-view').removeClass('active');
-            $(this).addClass('active');
-        });
-
-        $('.js-show-filters').on('click', function() {
-            if(!$('.filters').hasClass('active')) {
-                $('.filters').addClass('active');
-                $('.overlay_filters').fadeIn(300);
-            } else {
-                $('.filters').removeClass('active');
-                $('.overlay_filters').fadeOut(300);
-            }
-        });
-
-
-
-
-
-
-
-
-
 
 
 
@@ -337,30 +261,6 @@ $(window).scroll(function() {
 
 
 
-// 4. форма
-// ==============
-
-
-    $('.js-floating-label').blur();
-
-    $('.js-floating-label').on('focus', function() {
-        $(this).parent().find('.signup-form__floating-placeholder').addClass('float');
-        $(this).parent().addClass('active');
-    });
-
-    $('.js-floating-label').on('blur', function() {
-        if($(this).val()!=""){} else {
-            $(this).parent().find('.signup-form__floating-placeholder').removeClass('float');
-            $(this).parent().removeClass('active');
-        };
-    });
-
-
-
-
-
-
-
 
     function showStickyHeader() {
         if ( window.pageYOffset > 182 ) {
@@ -379,83 +279,16 @@ $(window).scroll(function() {
 
     $(document).ready(function(){
 
-
-
-
-
-
-
-
-        // форма обратной связи =======================
-
-
-        var canSend = false; // с этой переменной сверяем валидацию и показ разных сообщений
-
-        // анимация инпутов. Только для красоты
-        $('.js-input').on('focus', function() {
-            $(this).parent().addClass('signup-form__input_active');
-        });
-        $('.js-input').on('blur', function() {
-            var inpVal = $(this).val();
-            if ( inpVal == "" ) {
-                $(this).parent().removeClass('signup-form__input_active');
-            }
+        $('.js-scroll-to-section').click(function() { 
+        var targetSection = $(this).data('scroll-target');
+            $("html, body").animate({        
+                scrollTop: $('#' + targetSection ).offset().top - 100 }, 600);
+            return false;
         });
 
-        // простая валидация по длине строк
-        $('.signup-form .js-input_required').on('input', function() {
-            $('.signup-form .js-input_required').each(function() {
-                if($(this).val().length > 3) {
-                    canSend = true;
-                }else {
-                    canSend = false;
-                }
-            });
 
-            // окрашивание кнопки-submit "отправить"
-            if (!canSend) {
-                $(this).parent().parent().parent().parent().find('.btn.btn_outline-white').addClass('btn_no').removeClass('btn_yes');
-            }else {
-                $(this).parent().parent().parent().parent().find('.btn.btn_outline-white').addClass('btn_yes').removeClass('btn_no');
-            }
-        });
-
-        // показ сообещний успех-неуспех
-        $("#show-mes").on('click', function(e) { //событие прикреплено к кнопке, нужно переназначить на отправку или ajax-событие
+        $(".js-open-modal").on('click', function(e){
             e.preventDefault();
-            if(canSend) {
-                $('.signup-form__message').addClass('signup-form__message_success').removeClass('signup-form__message_error');
-                $('.signup-form__message').slideDown(200);
-                $('.signup-form__message').html('<p class="text-center"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;Ваше сообщение отправлено</p>');
-                $('.signup-form .btn').removeClass('btn_yes btn_no');
-            }
-             else {
-                $('.signup-form__message').addClass('signup-form__message_error').removeClass('signup-form__message_success');
-                $('.signup-form__message').slideDown(200);
-                $('.signup-form__message').html('<p class="text-center"><i class="fa fa-ban" aria-hidden="true"></i>&nbsp;&nbsp;Заполните, пожалуйста, поля</p>');
-            }
-            setTimeout(function() {
-                $('.signup-form__message').removeClass('signup-form__message_success signup-form__message_success');
-                $('.signup-form__message').slideUp(200);
-                $('.signup-form__message').html('');
-            },2000)
-        });
-
-
-        // форма обратной связи конец =======================
-
-
-
-
-
-
-
-
-
-
-
-
-        $(".js-open-modal").on('click', function(){
 
             $('.modal').removeClass('modal_active');
             $('.overlay_modal').fadeOut(400);                          
@@ -476,6 +309,140 @@ $(window).scroll(function() {
             $('.modal').removeClass('modal_active');
             $('.overlay_modal').fadeOut(400);                          
         });
+
+
+
+
+
+
+
+
+        // форма обратной связи ддля почты =======================
+
+
+        var canSendEmail = false; // с этой переменной сверяем валидацию и показ разных сообщений
+
+        // анимация инпутов. Только для красоты
+        $('.js-input').on('focus', function() {
+            $(this).parent().addClass('signup-form__input_active');
+        });
+        $('.js-input').on('blur', function() {
+            var inpVal = $(this).val();
+            if ( inpVal == "" ) {
+                $(this).parent().removeClass('signup-form__input_active');
+            }
+        });
+
+        // простая валидация по длине строк
+        $('#email-form .js-input_required').on('input', function() {
+            $('#email-form .js-input_required').each(function() {
+                if($(this).val().length > 3) {
+                    canSendEmail = true;
+                }else {
+                    canSendEmail = false;
+                }
+            });
+
+            // окрашивание кнопки-submit "отправить"
+            if (!canSendEmail) {
+                $(this).parent().parent().parent().parent().find('.btn.btn_outline-white').addClass('btn_no').removeClass('btn_yes');
+            }else {
+                $(this).parent().parent().parent().parent().find('.btn.btn_outline-white').addClass('btn_yes').removeClass('btn_no');
+            }
+        });
+
+        // показ сообещний успех-неуспех
+        $("#show-mes").on('click', function(e) { //событие прикреплено к кнопке, нужно переназначить на отправку или ajax-событие
+            e.preventDefault();
+            if(canSendEmail) {
+                $('#email-form .signup-form__message').addClass('signup-form__message_success').removeClass('signup-form__message_error');
+                $('#email-form .signup-form__message').slideDown(200);
+                $('#email-form .signup-form__message').html('<p class="text-center"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;Ваше сообщение отправлено</p>');
+                $('#email-form .signup-form .btn').removeClass('btn_yes btn_no');
+            }
+             else {
+                $('#email-form .signup-form__message').addClass('signup-form__message_error').removeClass('signup-form__message_success');
+                $('#email-form .signup-form__message').slideDown(200);
+                $('#email-form .signup-form__message').html('<p class="text-center"><i class="fa fa-ban" aria-hidden="true"></i>&nbsp;&nbsp;Заполните, пожалуйста, поля</p>');
+            }
+            setTimeout(function() {
+                $('#email-form .signup-form__message').removeClass('signup-form__message_success signup-form__message_success');
+                $('#email-form .signup-form__message').slideUp(200);
+                $('#email-form .signup-form__message').html('');
+            },2000)
+        });
+
+
+        // форма обратной связи для почты конец =======================
+
+
+
+
+
+
+
+
+
+
+
+        // форма обратной связи ддля обратного звонка =======================
+
+
+        var canSendCallback = false; // с этой переменной сверяем валидацию и показ разных сообщений
+
+        // простая валидация по длине строк
+        $('#callback-form .js-input_required').on('input', function() {
+            $('#callback-form .js-input_required').each(function() {
+                if($(this).val().length > 3) {
+                    canSendCallback = true;
+                }else {
+                    canSendCallback = false;
+                }
+            });
+
+            // окрашивание кнопки-submit "отправить"
+            if (!canSendCallback) {
+                $(this).parent().parent().parent().parent().find('.btn.btn_outline-white').addClass('btn_no').removeClass('btn_yes');
+            }else {
+                $(this).parent().parent().parent().parent().find('.btn.btn_outline-white').addClass('btn_yes').removeClass('btn_no');
+            }
+        });
+
+        // показ сообещний успех-неуспех
+        $("#show-mes2").on('click', function(e) { //событие прикреплено к кнопке, нужно переназначить на отправку или ajax-событие
+            e.preventDefault();
+            if(canSendCallback) {
+                $('#callback-form .signup-form__message').addClass('signup-form__message_success').removeClass('signup-form__message_error');
+                $('#callback-form .signup-form__message').slideDown(200);
+                $('#callback-form .signup-form__message').html('<p class="text-center"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;Ваше сообщение отправлено</p>');
+                $('#callback-form .signup-form .btn').removeClass('btn_yes btn_no');
+            }
+             else {
+                $('#callback-form .signup-form__message').addClass('signup-form__message_error').removeClass('signup-form__message_success');
+                $('#callback-form .signup-form__message').slideDown(200);
+                $('#callback-form .signup-form__message').html('<p class="text-center"><i class="fa fa-ban" aria-hidden="true"></i>&nbsp;&nbsp;Заполните, пожалуйста, поля</p>');
+            }
+            setTimeout(function() {
+                $('#callback-form .signup-form__message').removeClass('signup-form__message_success signup-form__message_success');
+                $('#callback-form .signup-form__message').slideUp(200);
+                $('#callback-form .signup-form__message').html('');
+            },2000)
+        });
+
+
+        // форма обратной связи для обратного звонка конец =======================
+
+
+
+
+
+
+
+
+
+
+
+
 
     });
 
