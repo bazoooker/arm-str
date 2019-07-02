@@ -6,11 +6,24 @@
 	&:hover {text-decoration: none;}
 }
 
-.link_tel {
-	font-size: 20px;
-	font-weight: 900;
-	color: black;
+.link-icon {
+	position: relative;
+	padding: 0 0 0 36px;
+	&::before {
+		@include pseudo(50%, auto, auto, 0, 40px, 40px);
+	}
+	
 }
+
+.link-icon__icon {
+	position: absolute;
+	left: 0;
+	top: 4px;
+	width: 16px;
+	svg {
+		width: 100%;
+	}
+}	
 
 .link_callback {
 	font-size: 13px;

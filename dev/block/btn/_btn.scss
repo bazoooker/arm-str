@@ -80,17 +80,50 @@ input.btn_main:visited {
 // }
 
 
-// .btn_outline {
-// 	background-color: #fff;
-// 	color: #000;
-// 	border: 2px solid #000;
-// 	background: none;
-// 	&:active,
-// 	&:visited,
-// 	&:focus 	{ color: #000 !important; background: none; }
-// 	&:hover 	{ background: none; background-color: #000 !important; color: #fff !important; }
-// 	&:focus 	{}
-// }
+.btn_outline-white {
+	background-color: transparent;
+	color: #fff;
+	border: 3px solid rgba(255,255,255,.4);
+	background: none;
+	transition: 300ms;
+	min-width: 230px;
+	i {
+		position: absolute;
+		opacity: 0;
+		margin-right: 20px;
+		transform: translateY(-30px);
+	}
+
+	&:active,
+	&:visited,
+	&:focus 	{ color: $color_main; background-color: #fff; }
+	&:hover 	{ 
+		background-color: #fff; 
+		color: $color_main; 
+	}
+	&:focus 	{}
+	&.btn_yes {
+		background-color: #459e45 !important;
+		i {
+			position: static;
+			opacity: 1;
+			transform: translateY(0px);
+			transition: 300ms;
+		}
+		&:active,
+		&:visited,
+		&:focus 	{ color: #fff; }
+		&:hover 	{ 
+			background-color: #459e45 !important;
+			color: #fff;
+			border: 3px solid #459e45;
+		}
+	}
+	&.btn_no {
+		background-color: #dc7373 !important;
+	}
+	
+}
 
 .btn_size-xl {
 	@include font-kit(19px, 18px, 17px, 16px, 14px);
@@ -104,8 +137,9 @@ input.btn_main:visited {
 	padding: 12px 26px;
 }
 .btn_size-m {
-	font-size: 1.5rem;
-	padding: 10px 14px;
+	@include font-kit(16px, 16px, 15px, 15px, 14px);
+	@include line-height-kit(1.35, 1.4, 1.5, 1.6, 1.75);
+	padding: 8px 41px;
 }
 .btn_size-s {
 	@include font-kit(14px, 14px, 13px, 13px, 12px);

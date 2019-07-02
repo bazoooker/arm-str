@@ -10,12 +10,14 @@
 	background-size: contain;
 	background-position: center right;
 	background-repeat: no-repeat;
+	transition: 300ms;
 	&::before {
 		@include pseudo(0,auto,0,0,81px,81px);
 		background-image: url(/img/logo-gear.png); 
 		background-size: contain;
 		background-position: center right;
 		background-repeat: no-repeat;
+		transition: 300ms;
 	}
 }
 @media screen and (max-width: 1200px) 	{}

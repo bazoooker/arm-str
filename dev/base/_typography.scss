@@ -67,7 +67,7 @@ html {}
 
 body {
     @include font-kit(16px,15px,15px,15px,14px);
-    @include line-height-kit(1.6, 1.6, 1.7, 1.75, 1.85);
+    @include line-height-kit(1.4, 1.45, 1.5, 1.55, 1.65);
     @include font(400,normal);
 }
 
@@ -82,25 +82,25 @@ h1 {
 }
 
 h2 {
-    @include font-kit(49px,45px,42px,38px,34px);
+    @include font-kit(25px,23px,22px,21px,20px);
     @include line-height-kit(1.25, 1.3, 1.35, 1.4, 1.55);
     margin: 0 0 2.8rem 0;
 }
 
 h3 {
-    @include font-kit(45px,42px,38px,34px,30px);
+    @include font-kit(23px,22px,21px,20px,19px);
     @include line-height-kit(1.15, 1.20, 1.3, 1.4, 1.55);
     margin: 0 0 2.6rem 0;
 }
 
 h4 {
-    @include font-kit(42px,38px,34px,30px,27px);
+    @include font-kit(22px,21px,20px,19px,18px);
     @include line-height-kit(1.15, 1.20, 1.3, 1.4, 1.55);
     margin: 0 0 2.4rem 0;
 }
 
 h5 {
-    @include font-kit(38px,34px,30px,27px,23px);
+    @include font-kit(22px,21px,20px,19px,18px);
     @include line-height-kit(1.15, 1.20, 1.3, 1.4, 1.55);
     margin: 0 0 2.2rem 0;
 }
@@ -169,25 +169,25 @@ table tr {
 
 ul {
     padding-left: 2px;
-    margin: 0 0 2rem 0;
+    margin: 0 0 20px 0;
     li {
         position: relative;
-        margin-bottom: 1rem;
-        padding: 0 0 0 2rem;
+        margin-bottom: 4px;
+        padding: 0 0 0 40px;
         list-style: none;
 
         &::before {
-            @include pseudo(11px,auto,auto,3px,5px,5px);
+            @include pseudo(11px,auto,auto,3px,18px,2px);
             background-color: $color_main;
 
         }
 
 
         ul {
-            margin: 1.8rem 0 1.8rem 0;
+            margin: 18px 0 18px 0;
             li {
                 // поведение
-                padding: 0 0 0 3rem;
+                padding: 0 0 0 30px;
                 &::before {
                     // поведение
                     width: 8px;
@@ -264,8 +264,9 @@ ol{
 
 
 .text-big {
-    font-size: 2.5rem;
-    @include line-height-kit(1.4, 1.45, 1.5, 1.55, 1.65);
+    font-size: 24px;
+    font-weight: bold;
+    @include line-height-kit(1.2, 1.35, 1.4, 1.45, 1.55);
 }
 .text-brutal {
     font-size: 2rem;
@@ -278,16 +279,54 @@ ol{
 .text-accent        {color: $color_main !important; }
 .text-gray          {color: $color_gray !important; }
 
-.text-deco-big {
+
+.text-deco {
     position: relative;
     display: inline-block;
+    &::before {
+        background-repeat: repeat-x;
+    }
+}
+
+.text-deco_size-l {
     padding-bottom: 60px;
     &::before {
         @include pseudo(auto,0,0,0,100%,23px);
-        background-image: url(/img/bg/bg-wave-big-b.png);
+        // background-image: url(/img/bg/bg-wave-big-b.png);
         background-size: 94px;
+        // GET BACK animation: animb 60s linear;
+    }
+    &.text-deco_blue {
+        &::before {
+            background-image: url(/img/bg/bg-wave-big-b.png);
+        }
+    }
+    &.text-deco_white {
+        &::before {
+            background-image: url(/img/bg/bg-wave-big-w.png);
+        }
+    }
+}
+.text-deco_size-s {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 20px;
+    &::before {
+        @include pseudo(auto,0,0,0,100%,6px);
+        // background-image: url(/img/bg/bg-wave-big-b.png);
+        background-size: 24px;
         background-repeat: repeat-x;
         // GET BACK animation: animb 60s linear;
+    }
+    &.text-deco_blue {
+        &::before {
+            background-image: url(/img/bg/bg-wave-small-b.png);
+        }
+    }
+    &.text-deco_white {
+        &::before {
+            background-image: url(/img/bg/bg-wave-small.png);
+        }
     }
 }
 
