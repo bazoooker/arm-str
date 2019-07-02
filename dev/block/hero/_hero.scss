@@ -5,3 +5,9 @@
 	background-image: url(/img/bg/bg-hero.jpg);
 	@include bg-cover;
 }
+
+@media screen and (max-width: 1024px) {
+	// .hero {
+	// 	margin-top: 175px;
+	// }
+}

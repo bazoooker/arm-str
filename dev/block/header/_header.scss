@@ -57,8 +57,57 @@
 
 
 
-@media screen and (max-width: 1200px) {}
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1400px) {
+	.header {
+		.logo {
+			flex: 0 0 200px;
+			min-width: 200px;
+			&::before {
+				top: 50%;
+				transform: translateY(-50%);
+				width: 55px;
+				height: 55px;
+			}
+		}
+	}
+	.header__left {
+		flex: 1 1 45%;
+	}
+	.header__contacts {
+		flex: 1 1 58%;
+	}
+}
+@media screen and (max-width: 1200px) {
+	.header {
+		.link.link_tel {
+			font-size: 20px;
+		}
+		.btn_catalog {
+			padding: 12px 18px;
+			&::before,
+			&::after {display: none;}
+		}
+	}
+	.header__contacts {
+		flex: 1 1 47%;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.header {
+		.nav {display: none;}
+	}
+	.header__left {
+		flex: 0 0 240px;
+	}
+	.header__left {
+		.logo {margin-right: 40px;}
+		.btn_catalog {
+			display: none;
+		}
+		@include flex-row(nowrap, flex-start, center);
+	}
+	.header__contacts {margin-right: 60px;}
+}
 @media screen and (max-width: 992px) {}
 @media screen and (max-width: 768px) {}
 @media screen and (max-width: 568px) {}

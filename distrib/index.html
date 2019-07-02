@@ -50,7 +50,7 @@
 
         <header class="header">
             <div class="container">
-                <div class="header__left">
+                <div class="header__left">                    
                     <a href="/" class="logo"></a>
                     <a href="/" class="btn btn_catalog">Каталог продукции</a>
                 </div>
@@ -63,6 +63,11 @@
                         <a href="tel:+73852560212" class="link link_tel"><span class="text-gray">+7 (3852)</span> 56-02-12</a>
                         <a href="" class="link link_callback js-open-modal" data-target="callback"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;Заказать обратный звонок</a>
                     </div>
+                    <span class="btn btn-burger js-open-mobile-menu">
+                        <span class="btn-burger__bar"></span>
+                        <span class="btn-burger__bar"></span>
+                        <span class="btn-burger__bar"></span>
+                    </span>
                 </div>
             </div>
         </header>
@@ -336,8 +341,39 @@
                 </form>
                 <span class="modal__close js-close-modal"></span>
         </aside>
-
         <div class="overlay overlay_modal js-close-modal" style="display: none;"></div>
+
+
+
+
+
+
+
+        <div class="menu" id="mobile-menu">
+            <span class="menu-close js-open-mobile-menu"></span>
+            <div class="menu__wrapper">
+
+                <header class="menu__header">
+                    <a href="/" class="logo"></a>
+                    <a href="/" class="btn btn_catalog">Каталог продукции</a>
+                </header>
+
+                <div class="container mb-40">
+                    <nav class="nav">
+                        <a class="nav__link" href="">О компании</a>
+                        <a class="nav__link" href="">Контакты</a>
+                    </nav>
+                </div>
+
+
+                <footer class="menu__footer">
+                    <a href="tel:+73852560212" class="link link_tel"><span class="text-gray">+7 (3852)</span> 56-02-12</a>
+                        <a href="" class="link link_callback js-open-modal" data-target="callback"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;Заказать обратный звонок</a>
+                </footer>
+
+            </div>
+        </div>
+
 
         <!-- scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
