@@ -1,71 +1,61 @@
 
+
+$(document).ready(function() {
+    setTimeout(function() {
+        $('.preloader').addClass('preloader_hidden');
+    }, 1000);
+});
+
+
 $(window).scroll(function() {
     $('.js-fancy-heading').each(function() {
         if( $(this).visible(true) ) {  
             $(this).addClass('lines-added')
         }        
     });
+
+    if ($( window ).width() > 992) {
+        var stickyAsideTop = $('.js-sticky-sidebar').offset().top;
+        var stickyAsideleft = $('.js-sticky-sidebar').parent().offset().left-15;
+        var documentTop = $(document).scrollTop();
+        var scrollToRemoveSticky = $('.product-list').height() + $('.header').height()+100;
+        var stickyAside = false;
+        if ( (documentTop > 820) && (documentTop < scrollToRemoveSticky) && (!stickyAside) )  {
+            console.log('add sticky')
+            $('.js-sticky-sidebar').addClass('sticky');
+            $('.js-sticky-sidebar').css('left', stickyAsideleft);
+            $('.js-sticky-sidebar').css('width', ( $('.container').width() - $('.product-list').width())-30 );
+        }else {
+            console.log('remove sticky')
+            $('.js-sticky-sidebar').removeClass('sticky');
+        }
+    }
+
+});
+
+$(window).resize(function() {
+    if ( $( window ).width() > 992 ) {
+
+        var stickyAsideTop = $('.js-sticky-sidebar').offset().top;
+        var stickyAsideleft = $('.js-sticky-sidebar').parent().offset().left-15;
+        var documentTop = $(document).scrollTop();
+        var scrollToRemoveSticky = $('.product-list').height() + $('.header').height()+100;
+        var stickyAside = false;
+
+        if ( (documentTop > 820) && (documentTop < scrollToRemoveSticky) && (!stickyAside) )  {
+            var stickyWidth = $('.container').width() - $('.product-list').width()-30;
+            console.log (stickyWidth);
+            $('.js-sticky-sidebar').css('width', stickyWidth);
+        }
+    }else {
+        $('.js-sticky-sidebar').removeClass('sticky');
+    }
 });
 
 
 
 
-
-        // var swiper = new Swiper('.swiper-hero', {
-        //   pagination: {
-        //     el: '.swiper-pagination',
-        //     clickable: true,
-        //   },
-        // });
-
-
-
-        // var feedbackSwiper = new Swiper('.swiper-feedback', {
-        //   speed: 800,
-        //     navigation: {
-        //         nextEl: '.swiper-feedback__btn-next',
-        //         prevEl: '.swiper-feedback__btn-prev',
-        //     },
-        // });
-
-
-
-        // var teachingSwiper = new Swiper('.swiper-teaching', {
-        //   speed: 300,
-        //   pagination: {
-        //     clickable: true,
-        //     el: '.teaching-pagination',
-        //   },
-        // });
-
-
-
-
-
-
-        // range slider in filters
-        // сайт плагина: 
-        // ionden.com/a/plugins/ion.rangeSlider/api.html
-
-        // $(".js-range-slider").ionRangeSlider({
-        //     skin: "round",
-        //     type: "double",
-        //     min: 1000,
-        //     max: 50000,
-        //     from: 10000,
-        //     to: 40000,
-        //     hide_min_max: true,
-        //     onChange: function(data) {
-        //         $('.filter-price__min').val(data.from);
-        //         $('.filter-price__max').val(data.to);
-        //     }
-        // });
-
-
-
-
-
-        $('select').niceSelect();
+        // $('select').niceSelect();
 
 
 

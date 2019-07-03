@@ -1,10 +1,50 @@
 .catalog-list {
 	.container {
-		@include flex-row(nowrap,space-between,flex-start);
+		position: relative;
+		@include flex-row(nowrap,flex-end,flex-start);
 	}
 }
 
 .catalog-list__sidebar {
-	flex: 1 1 35%;
-	padding: 0 40px 0 0;
+	flex: 0 0 30%;
+	// max-width: 351px;
+	padding: 30px 30px 30px 30px;
+	transform: translateX(-30px);
+	&.sticky {
+		position: fixed;
+		top: 100px;
+		transform: translateX(0px);
+		box-shadow: 0 0 15px 0 rgba(0,0,0,.09)
+		// box-shadow: 0 0 25px 0 rgba(0,0,0,.2);
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.catalog-list__sidebar {
+		flex: 0 0 40%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.catalog-list {
+		.container {
+			@include flex-row(wrap,flex-start,flex-start);
+		}
+	}
+	.catalog-list__sidebar {
+		flex: 1 1 100%;
+		margin: 0 0 40px 0;
+		padding: 0;
+		transform: translateX(0px);
+	}
+}
+
+@keyframes animSidebar {
+	0% {
+		transform: translateX(20px);
+	}
+	100% {
+		transform: translateX(0);
+
+	}
 }

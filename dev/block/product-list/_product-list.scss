@@ -1,6 +1,19 @@
 .product-list {
-	flex: 1 1 75%;	
+	flex: 0 0 70%;	
+
 	img {
 		height: 289px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.product-list {
+		flex: 0 0 60%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.product-list {
+		flex: 1 1 100%;	
 	}
 }

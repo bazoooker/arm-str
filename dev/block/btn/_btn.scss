@@ -126,23 +126,26 @@ input.btn_main:visited {
 }
 
 .btn_size-xl {
-	@include font-kit(19px, 18px, 17px, 16px, 14px);
+	@include font-kit(19px, 18px, 17px, 16px, 16px);
 	@include line-height-kit(1.35, 1.4, 1.5, 1.6, 1.75);
 	padding: 14px 18px;
 }
 
 .btn_size-l {
-	@include font-kit(16px, 16px, 15px, 15px, 14px);
+	// @include font-kit(16px, 16px, 15px, 15px, 14px);
+	font-size: 16px;
 	@include line-height-kit(1.35, 1.4, 1.5, 1.6, 1.75);
 	padding: 12px 26px;
 }
 .btn_size-m {
-	@include font-kit(16px, 16px, 15px, 15px, 14px);
+	// @include font-kit(16px, 16px, 15px, 15px, 14px);
+	font-size: 16px;
 	@include line-height-kit(1.35, 1.4, 1.5, 1.6, 1.75);
 	padding: 8px 41px;
 }
 .btn_size-s {
-	@include font-kit(14px, 14px, 13px, 13px, 12px);
+	// @include font-kit(14px, 14px, 13px, 13px, 12px);
+	font-size: 16px;
 	@include line-height-kit(1.35, 1.4, 1.5, 1.6, 1.75);
 	padding: 8px 12px;
 }

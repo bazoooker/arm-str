@@ -41,8 +41,9 @@
 
 .link_dl-pdf,
 .link_dl-doc {
-	padding: 10px 0 10px 50px;
+	padding: 10px 0 10px 45px;
 	text-decoration: underline;
+	margin: 0 15px 0 0;
 
 	&::before {
 		@include pseudo(50%,auto,auto,0,28px,39px);

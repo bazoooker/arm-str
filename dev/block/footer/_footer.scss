@@ -30,3 +30,14 @@
 
 .footer__copyright {flex: 1 1 30%;}
 .footer__policy {flex: 1 1 70%; text-align: right;}
+
+@media screen and (max-width: 768px) {
+	.footer__legal {
+		.container {
+			@include flex-row(wrap,space-between, center);
+		}
+	}
+	.footer__copyright {margin: 0 0 15px 0;}
+	.footer__copyright,
+	.footer__policy {flex: 1 1 100%; text-align: center;}
+}

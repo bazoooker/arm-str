@@ -66,7 +66,7 @@
 html {}
 
 body {
-    @include font-kit(16px,15px,15px,15px,14px);
+    @include font-kit(16px,16px,16px,16px,16px);
     @include line-height-kit(1.4, 1.45, 1.5, 1.55, 1.65);
     @include font(400,normal);
 }
@@ -264,7 +264,7 @@ ol{
 
 
 .text-big {
-    font-size: 24px;
+    @include font-kit(25px,24px,22px,20px,19px);
     font-weight: bold;
     @include line-height-kit(1.2, 1.35, 1.4, 1.45, 1.55);
 }
