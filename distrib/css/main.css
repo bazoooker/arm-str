@@ -441,21 +441,29 @@ a:visited {
   a:visited:active {
     background-color: transparent; }
 
+@media screen and (max-width: 1400px) {
+  .table-resp {
+    width: 100%;
+    overflow-x: scroll;
+    margin-bottom: 40px; }
+    .table-resp table {
+      width: 100%;
+      min-width: 1024px; } }
+
 table {
   width: 100%;
-  margin: 4rem 0; }
+  margin: 0; }
   table thead {
     font-weight: bold;
-    color: black !important;
-    text-transform: uppercase; }
+    color: black !important; }
     table thead td {
-      background-color: gray !important; }
+      background-color: #e5f3f9 !important; }
 
 p + table,
 ol + table,
 ul + table,
 ol + table {
-  margin: 3rem 0 4rem 0; }
+  margin: 20px 0 40px 0; }
 
 table tr {
   line-height: 1.15;
@@ -473,12 +481,12 @@ table tr {
     table tr {
       line-height: 1.55; } }
   table tr td {
-    padding: 1rem 1.5rem;
+    padding: 10px 15px;
     -webkit-transition: 300ms;
     -o-transition: 300ms;
     transition: 300ms; }
   table tr:nth-child(even) td {
-    background-color: #efefef; }
+    background-color: #e5f3f9; }
   table tr:nth-child(odd) td {
     background-color: transparent; }
 
@@ -8740,9 +8748,10 @@ input.btn_main:visited:active {
 @media screen and (max-width: 1400px) {
   .header .logo {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 200px;
-    flex: 0 0 200px;
-    min-width: 200px; }
+    -ms-flex: 0 0 180px;
+    flex: 0 0 180px;
+    min-width: 180px;
+    margin: 0 20px 0 0; }
     .header .logo::before {
       top: 50%;
       -webkit-transform: translateY(-50%);
@@ -8750,6 +8759,10 @@ input.btn_main:visited:active {
       transform: translateY(-50%);
       width: 55px;
       height: 55px; }
+  .header .btn_catalog {
+    padding: 12px 18px; }
+    .header .btn_catalog::before, .header .btn_catalog::after {
+      display: none; }
   .header__left {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 45%;
@@ -8762,10 +8775,6 @@ input.btn_main:visited:active {
 @media screen and (max-width: 1200px) {
   .header .link.link_tel {
     font-size: 20px; }
-  .header .btn_catalog {
-    padding: 12px 18px; }
-    .header .btn_catalog::before, .header .btn_catalog::after {
-      display: none; }
   .header__contacts {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 47%;
@@ -8875,13 +8884,13 @@ input.btn_main:visited:active {
 
 .content {
   background-image: url(/img/bg/bg-katakana.png);
-  background-size: contain;
-  background-position: 15% center;
-  background-repeat: no-repeat; }
+  background-size: cover;
+  background-position: 200px left;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
 
 .hero {
   margin-top: 182px;
-  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8895,10 +8904,33 @@ input.btn_main:visited:active {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: url(/img/bg/bg-hero.jpg);
   background-position: 50% 50%;
   background-size: cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  height: 70vh; }
+
+.hero-small {
+  margin-top: 182px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 350px; }
+  .hero-small h1 {
+    margin: 0;
+    padding: 0; }
 
 .logo {
   position: relative;
@@ -9330,6 +9362,31 @@ input.btn_main:visited:active {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+.accordeon__label {
+  display: inline-block;
+  position: relative;
+  color: black;
+  margin: 0 0 40px 0;
+  cursor: pointer; }
+  .accordeon__label i.fa {
+    -webkit-transition: 450ms;
+    -o-transition: 450ms;
+    transition: 450ms;
+    color: #0066ad;
+    font-size: .9em; }
+  .accordeon__label h2 {
+    margin-bottom: 0px;
+    color: black; }
+
+.accordeon.accordeon_active .accordeon__label i.fa {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+@media screen and (max-width: 568px) {
+  .accordeon__label::before {
+    display: none; } }
 
 .catalog-list .container {
   position: relative;

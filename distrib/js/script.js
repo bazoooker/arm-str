@@ -1,10 +1,28 @@
 
 
 $(document).ready(function() {
-    setTimeout(function() {
-        $('.preloader').addClass('preloader_hidden');
-        $('.wrapper').removeClass('no-scroll');
-    }, 1000);
+    // setTimeout(function() {
+    //     $('.preloader').addClass('preloader_hidden');
+    //     $('.wrapper').removeClass('no-scroll');
+    // }, 1000);
+
+
+    // --------------------
+    // аккордеоны
+    $('.js-accordeon').click(function() {
+        let accordIsOpen = $(this).parent().hasClass('accordeon_active');
+        $('.accordeon').removeClass('accordeon_active');
+        $('.accordeon').find('.accordeon__content').slideUp(300);
+        if(accordIsOpen) {
+            $(this).parent().removeClass('accordeon_active');
+            $(this).parent().find('.accordeon__content').slideUp(300);
+        }else {
+            $(this).parent().addClass('accordeon_active');
+            $(this).parent().find('.accordeon__content').slideDown(300);
+        }
+    });
+
+    // --------------------
 
 
 });
@@ -93,31 +111,31 @@ $(window).resize(function() {
 
 
 
-        // функционал внутри меню каталога
+        
 
-        $('.js-show-product-category-list').on('click', function() {
+        // $('.js-show-product-category-list').on('click', function() {
 
-            if ($( window ).width() > 768) { // Если десктоп, показываем соответствующую подкатегорию справа
-                var categoryID = $(this).attr('id');
-                var categoryProdList = $('.product-category-list[data-id="'+categoryID+'"]');
+        //     if ($( window ).width() > 768) {
+        //         var categoryID = $(this).attr('id');
+        //         var categoryProdList = $('.product-category-list[data-id="'+categoryID+'"]');
 
-                $('.product-category-list').removeClass('active');
-                $(categoryProdList).addClass('active');
+        //         $('.product-category-list').removeClass('active');
+        //         $(categoryProdList).addClass('active');
 
-                $('.catalog-link__label').removeClass('active');
-                $(this).addClass('active');
-            } else { // Если мобилка, раскрываем аккордеон
+        //         $('.catalog-link__label').removeClass('active');
+        //         $(this).addClass('active');
+        //     } else {
 
-                if( !$(this).hasClass('active') ) {
-                    $('.catalog-link__label').removeClass('active');
-                    $(this).addClass('active');
+        //         if( !$(this).hasClass('active') ) {
+        //             $('.catalog-link__label').removeClass('active');
+        //             $(this).addClass('active');
 
-                    $('.catalog-link .catalog-link__accordeon').slideUp(300);
-                    $(this).parent().find('.catalog-link__accordeon').slideDown(300);
-                }
-            }
+        //             $('.catalog-link .catalog-link__accordeon').slideUp(300);
+        //             $(this).parent().find('.catalog-link__accordeon').slideDown(300);
+        //         }
+        //     }
 
-        });
+        // });
 
 
 
