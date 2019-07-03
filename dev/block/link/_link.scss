@@ -34,8 +34,12 @@
 .link_callback {
 	font-size: 13px;
 	font-style: italic;
+	transition: 300ms;
 	i {
 		font-size: .75em;
+	}
+	&:hover {
+		color: black;
 	}
 }
 
@@ -46,9 +50,13 @@
 	margin: 0 15px 0 0;
 
 	&::before {
-		@include pseudo(50%,auto,auto,0,28px,39px);
+		@include pseudo(50%,auto,auto,0,26px,34px);
 		transform: translateY(-50%);
 		@include bg-contain;
+		transition: 300ms;
+	}
+	&:hover::before {
+		transform: translateY(-50%) scale(1.09);
 	}
 }
 .link_dl-pdf::before {background-image: url(/img/icons/icon-file-pdf.png)}

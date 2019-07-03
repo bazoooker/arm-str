@@ -22,11 +22,12 @@ input.btn_main:visited {
 	background-color: $color_main;
 	color: #fff;
 	&:hover { 
-        text-decoration: underline;
+        text-decoration: none;
+        background-color: #29a7ff;
     }
     &:focus,
     &:active { 
-        background-color: transparent;
+        background-color: #29a7ff;
     }
 }
 
@@ -52,11 +53,13 @@ input.btn_main:visited {
 		opacity: .6;
 	}
 	&:hover { 
-        text-decoration: underline;
+        text-decoration: none;
+        background-color: #29a7ff;
+
     }
     &:focus,
     &:active { 
-        background-color: transparent;
+        background-color: #29a7ff;
     }
 }
 

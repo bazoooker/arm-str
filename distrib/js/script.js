@@ -3,7 +3,10 @@
 $(document).ready(function() {
     setTimeout(function() {
         $('.preloader').addClass('preloader_hidden');
+        $('.wrapper').removeClass('no-scroll');
     }, 1000);
+
+
 });
 
 
@@ -13,6 +16,9 @@ $(window).scroll(function() {
             $(this).addClass('lines-added')
         }        
     });
+    waveMove = $(document).scrollTop()/10;
+    $('body').append('<style>.js-text-deco-anim::before{background-position: -'+waveMove+'px;}</style>');
+
 
     if ($( window ).width() > 992) {
         var stickyAsideTop = $('.js-sticky-sidebar').offset().top;
@@ -269,6 +275,7 @@ $(window).resize(function() {
 
     $(document).ready(function(){
 
+
         $('.js-scroll-to-section').click(function() { 
         var targetSection = $(this).data('scroll-target');
             $("html, body").animate({        
@@ -437,6 +444,7 @@ $(window).resize(function() {
     });
 
 $(document).ready(function(){  
+    new WOW().init();
     // отправка колбека
     $(".modal form").on('submit', function(e){
             e.preventDefault();

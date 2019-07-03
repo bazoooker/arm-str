@@ -285,6 +285,7 @@ ol{
     display: inline-block;
     &::before {
         background-repeat: repeat-x;
+        transition: 1000ms;
     }
 }
 
@@ -294,7 +295,6 @@ ol{
         @include pseudo(auto,0,0,0,100%,23px);
         // background-image: url(/img/bg/bg-wave-big-b.png);
         background-size: 94px;
-        // GET BACK animation: animb 60s linear;
     }
     &.text-deco_blue {
         &::before {
@@ -306,6 +306,9 @@ ol{
             background-image: url(/img/bg/bg-wave-big-w.png);
         }
     }
+    // &:hover::before {
+    //     animation: animb 600ms linear both;
+    // }
 }
 .text-deco_size-s {
     position: relative;
@@ -331,16 +334,14 @@ ol{
 }
 
 
-// GET BACK
 // @keyframes animb {
 //     0% {
 //         background-position: left center;
 //     }
 //     100% {
-//         background-position: -1000px center;
+//         background-position: -30px center;
 //     }
 // }
-// =====================
 
 
 

@@ -9,12 +9,17 @@
 .nav__link:visited {
     font-weight: bold;
 	color: black;
+    padding: 8px 0;
+    transition: 300ms;
     &:hover { 
         text-decoration: underline;
+        color: $color_main;
+        text-decoration: none;
     }
     &:focus,
     &:active { 
         background-color: transparent;
+        text-decoration: none;
     }
 }
 
