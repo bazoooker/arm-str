@@ -25,6 +25,7 @@ $(document).ready(function() {
     new WOW().init();
 
     $('.preloader').addClass('preloader_hidden');
+    $('.wrapper').removeClass('no-scroll');
 
     // аккордеоны
     $('.js-accordeon').click(function() {

@@ -9705,7 +9705,8 @@ input.btn_main:visited:active {
   font-style: italic;
   padding: 0 15px 0 15px;
   margin-bottom: 0px;
-  height: 90px; }
+  height: 90px;
+  padding-top: 10px; }
   .signup-form textarea::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: rgba(255, 255, 255, 0.65); }
