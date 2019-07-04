@@ -9,6 +9,9 @@
 	overflow: hidden;
 	transform: translateX(110%);
 	transition: 600ms;
+	overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 50px;
 	&.active {
 		transform: translateX(0);
 		&::before {
@@ -27,6 +30,7 @@
 		display: block;
 		text-align: center;
 		margin: 10px 0;
+		font-size: 1.5em;
 	}
 	&::before {
 		transition: 0ms;
@@ -35,10 +39,17 @@
 		background-color: $color_main;
 		z-index: 1000;
 	}
+	.btn_catalog {
+		font-size: 1.2em;
+	    width: 100%;
+	    margin: 0 0 40px 0;
+	    max-width: 100%;
+	    padding: 20px 30px 20px 60px;
+	}
 }
 
 .menu__wrapper {
-	padding: 40px;
+	padding: 20px;
 }
 
 .menu__header {

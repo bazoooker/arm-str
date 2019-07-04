@@ -43,7 +43,7 @@
 	// }
 	.logo {
 		flex: 0 0 230px;
-		min-width: 230px;
+		max-width: 230px;
 		// margin: 0 40px 0 0;
 		&::before {
 			top: 50%;
@@ -61,7 +61,7 @@
 	.header {
 		.logo {
 			flex: 0 0 180px;
-			min-width: 180px;
+			max-width: 180px;
 			margin: 0 20px 0 0;
 			
 			&::before {
@@ -69,6 +69,9 @@
 				transform: translateY(-50%);
 				width: 55px;
 				height: 55px;
+			}
+			&:hover::before {
+				transform: translateY(-50%) rotate(65deg);
 			}
 		}
 		.btn_catalog {
@@ -91,7 +94,7 @@
 		}
 	}
 	.header__contacts {
-		flex: 1 1 47%;
+		flex: 1 1 50%;
 	}
 }
 @media screen and (max-width: 1024px) {
@@ -99,10 +102,10 @@
 		.nav {display: none;}
 	}
 	.header__left {
-		flex: 0 0 240px;
+		flex: 0 0 230px;
 	}
 	.header__left {
-		.logo {margin-right: 40px;}
+		.logo {margin-right: 30px;}
 		.btn_catalog {
 			display: none;
 		}
@@ -111,6 +114,30 @@
 	.header__contacts {margin-right: 60px;}
 }
 @media screen and (max-width: 992px) {}
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+	.header__right {
+		@include flex-row(nowrap,flex-end,center);
+	}
+	.header__contacts {
+		display: none;
+	}
+}
 @media screen and (max-width: 568px) {}
 @media screen and (max-width: 413px) {}
+@media screen and (max-width: 375px) {
+	.header,
+	.header.header_sticky {
+		.container {
+			padding: 0;
+		}
+		.header__right {margin: 0;}
+		.header__left {
+			flex: 0 0 170px;
+		    max-width: 170px;
+		    .logo {
+		    	flex: 0 0 170px;
+		    	max-width: 170px;
+		    }
+		}
+	}
+}

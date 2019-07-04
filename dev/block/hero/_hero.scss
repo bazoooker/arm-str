@@ -1,6 +1,6 @@
 @mixin hero {
 	margin-top: 182px;
-	@include flex-row(nowrap,center,center);
+	@include flex-row(nowrap,flex-start,center);
 	@include bg-cover;
 
 }
@@ -17,6 +17,8 @@
 	h1 {
 		margin: 0;
 		padding: 0;
+		@include font-kit(54px,45px, 42px,39px,31px);
+	    @include line-height-kit(1.15, 1.20, 1.25, 1.3, 1.35);
 	}
 }
 
