@@ -9420,9 +9420,21 @@ input.btn_main:visited:active {
   -webkit-transition-delay: 300ms;
   -o-transition-delay: 300ms;
   transition-delay: 300ms; }
-  #ventil-loader img {
-    -webkit-animation: ventil-loader 1s ease-in infinite;
-    animation: ventil-loader 1s ease-in infinite; }
+  #ventil-loader span {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(http://localhost:3000/img/logo-gear.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-animation: ventil-loader 1.2s infinite;
+    animation: ventil-loader 1.2s infinite;
+    -webkit-transform-origin: 50% 51%;
+    -ms-transform-origin: 50% 51%;
+    transform-origin: 50% 51%; }
 
 @-webkit-keyframes ventil-loader {
   0% {
