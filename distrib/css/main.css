@@ -208,45 +208,44 @@ section p:last-child {
   margin-bottom: 0; }
 
 @font-face {
-  font-family: 'AgoraSlabPro';
-  src: url("/fonts/pfagoroslabpro-reg-webfont.woff2") format("woff2"), url("/fonts/pfagoroslabpro-reg-webfont.woff") format("woff");
+  font-family: "PFAgoraSlabPro";
+  src: url("/fonts/pfagoraslabpro-reg.woff") format("woff"), url("/fonts/pfagoraslabpro-reg.woff2") format("woff2");
+  /* Modern Browsers */
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: 'AgoraSlabPro';
-  src: url("/fonts/pfagoroslabpro-ital-webfont.woff2") format("woff2"), url("/fonts/pfagoroslabpro-ital-webfont.woff") format("woff");
+  font-family: "PFAgoraSlabPro";
+  src: url("/fonts/pfagoraslabpro-italic.woff") format("woff"), url("/fonts/pfagoraslabpro-italic.woff2") format("woff2");
+  /* Modern Browsers */
   font-weight: normal;
   font-style: italic; }
 
 @font-face {
-  font-family: 'AgoraSlabPro';
-  src: url("/fonts/pfagoroslabpro-bold-webfont.woff2") format("woff2"), url("/fonts/pfagoroslabpro-bold-webfont.woff") format("woff");
-  font-weight: bold;
+  font-family: "PFAgoraSlabPro";
+  src: url("/fonts/pfagoraslabpro-bold.woff") format("woff"), url("/fonts/pfagoraslabpro-bold.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: 600;
   font-style: normal; }
 
 @font-face {
-  font-family: 'AgoraSlabPro';
-  src: url("/fonts/pfagoroslabpro-bolditalic-webfont.woff2") format("woff2"), url("/fonts/pfagoroslabpro-bolditalic-webfont.woff") format("woff");
-  font-weight: bold;
+  font-family: "PFAgoraSlabPro";
+  src: url("/fonts/pfagoraslabpro-bolditalic.woff") format("woff"), url("/fonts/pfagoraslabpro-bolditalic.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: 600;
   font-style: italic; }
 
 @font-face {
-  font-family: 'AgoraSlabPro';
-  src: url("/fonts/pfagoraslabpro-black-webfont.woff2") format("woff2"), url("/fonts/pfagoraslabpro-black-webfont.woff") format("woff");
-  font-weight: 800;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'AgoraSlabPro';
-  src: url("/fonts/pfagoraslabpro-ultrablack-webfont.woff2") format("woff2"), url("/fonts/pfagoraslabpro-ultrablack-webfont.woff") format("woff");
+  font-family: "PFAgoraSlabPro";
+  src: url("/fonts/pfagoraslabpro-ultrablack.woff") format("woff"), url("/fonts/pfagoraslabpro-ultrablack.woff2") format("woff2");
+  /* Modern Browsers */
   font-weight: 900;
   font-style: normal; }
 
 body {
   font-size: 16px;
   line-height: 1.4;
-  font-family: 'AgoraSlabPro';
+  font-family: 'PFAgoraSlabPro';
   font-weight: 400;
   font-style: normal; }
   @media screen and (max-width: 1200px) {
@@ -275,7 +274,7 @@ body {
       line-height: 1.65; } }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'AgoraSlabPro';
+  font-family: 'PFAgoraSlabPro';
   font-weight: 600;
   font-style: normal; }
 
@@ -587,7 +586,7 @@ ol {
 
 .text-brutal {
   font-size: 2rem;
-  font-family: 'AgoraSlabPro';
+  font-family: 'PFAgoraSlabPro';
   font-weight: 600;
   font-style: normal; }
 

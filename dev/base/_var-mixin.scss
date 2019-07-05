@@ -5,14 +5,13 @@ $color_gray: #999999;
 
 
 
-
-
-
 @mixin font($weight, $style) {
-    font-family: 'AgoraSlabPro';
+    font-family: 'PFAgoraSlabPro';
     font-weight: $weight;
     font-style: $style;
 }
+
+
 
 @mixin flex-col($wrap, $jusify-content, $align-items) {
     display: flex;
