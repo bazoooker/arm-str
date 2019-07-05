@@ -11,7 +11,7 @@
 
 // 0. глобальные переменные
 // =========================================================================
-var headerIsStatic  = false; // если false - хедер прилип к top
+var headerIsStatic  = true; // если false - хедер прилип к top
 var prodMenuIsOpen  = false; // если false - продуктовое меню не открыто
 var canSendEmail    = false; // валидация формы обратной связи
 var canSendCallback = false; // валидация формы обратного звонка
@@ -26,7 +26,7 @@ var toTopVisible    = false; // показ кнопки "наверх"
 $(document).ready(function() {
     new WOW().init();
 
-    // $('.preloader').addClass('preloader_hidden');
+    $('.preloader').addClass('preloader_hidden');
     $('.wrapper').removeClass('no-scroll');
 
     // открытие каталога
@@ -41,6 +41,9 @@ $(document).ready(function() {
                 $('.btn_catalog').addClass('active');
                 $('.catalog-menu').addClass('catalog-menu-active catalog-menu-sticky-header');
             };
+            if ( $( window ).width() < 1025 ) {
+                $('.wrapper').addClass('no-scroll');
+            }
             prodMenuIsOpen = true;
         } else {
             $('.btn_catalog').removeClass('active');
@@ -49,8 +52,12 @@ $(document).ready(function() {
             } else {
                 $('.catalog-menu').removeClass('catalog-menu-active catalog-menu-sticky-header');
             };
+            if ( $( window ).width() < 1025 ) {
+                $('.wrapper').removeClass('no-scroll');
+            }
             prodMenuIsOpen = false;
         }
+
     });
 
     // аккордеоны

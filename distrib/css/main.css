@@ -9242,6 +9242,72 @@ input.btn_main:visited:active {
 .catalog-menu-inner {
   height: auto; }
 
+.catalog-menu-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+  cursor: pointer; }
+  .catalog-menu-close:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    width: 34px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-16px);
+    -ms-transform: translateX(-16px);
+    transform: translateX(-16px);
+    width: 34px;
+    height: 2px;
+    background: #fff;
+    -webkit-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms; }
+  .catalog-menu-close:before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    width: 2px;
+    height: 34px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-16px);
+    -ms-transform: translateY(-16px);
+    transform: translateY(-16px);
+    width: 2px;
+    height: 34px;
+    background: #fff;
+    -webkit-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms; }
+  .catalog-menu-close:active {
+    border: 0;
+    outline: 0; }
+  .catalog-menu-close:hover {
+    -webkit-transform: rotate(135deg) scale(1.3);
+    -ms-transform: rotate(135deg) scale(1.3);
+    transform: rotate(135deg) scale(1.3); }
+
+@media screen and (max-width: 1024px) {
+  .catalog-menu.catalog-menu-static-header, .catalog-menu.catalog-menu-sticky-header {
+    top: 0;
+    z-index: 9999; } }
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
