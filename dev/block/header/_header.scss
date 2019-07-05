@@ -74,29 +74,36 @@
 				transform: translateY(-50%) rotate(65deg);
 			}
 		}
+		.link.link_tel {
+			font-size: 20px;
+		}
 		.btn_catalog {
 			padding: 12px 18px;
+			 background-image: none;
 			&::before,
 			&::after {display: none;}
 		}
 	}
 	.header__left {
-		flex: 1 1 45%;
+		flex: 1 1 40%;
 	}
 	.header__contacts {
-		flex: 1 1 58%;
+		flex: 1 1 40%;
 	}
 }
-@media screen and (max-width: 1200px) {
-	.header {
-		.link.link_tel {
-			font-size: 20px;
-		}
-	}
-	.header__contacts {
-		flex: 1 1 50%;
-	}
-}
+// @media screen and (max-width: 1200px) {
+// 	.header {
+// 		.link.link_tel {
+// 			font-size: 20px;
+// 		}
+// 	}
+// 	.header__contacts {
+// 		flex: 1 1 40%;
+// 	}
+// 	.header__left {
+// 		flex: 1 1 40%;
+// 	}
+// }
 @media screen and (max-width: 1024px) {
 	.header {
 		.nav {display: none;}

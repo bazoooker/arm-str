@@ -62,3 +62,6 @@
 }
 .link_dl-pdf::before {background-image: url(/img/icons/icon-file-pdf.png)}
 .link_dl-doc::before {background-image: url(/img/icons/icon-file-doc.png)}
+
+.text-white.link_dl-pdf::before {background-image: url(/img/icons/icon-file-pdf-white.png)}
+.text-white.link_dl-doc::before {background-image: url(/img/icons/icon-file-doc-white.png)}

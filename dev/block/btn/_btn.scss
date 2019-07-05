@@ -37,13 +37,18 @@ input.btn_main:visited {
 	background-color: $color_main;
 	color: #fff;
 	padding: 12px 35px 12px 60px;
+	background-image: url(/img/icons/icon-ventil.png); 
+	background-size: 28px;
+	background-position: 17px 50%;
+	background-repeat: no-repeat;
+	overflow: visible;
 	&::before {
-		@include pseudo(50%,auto,auto,15px,29px,23px);
-		transform: translateY(-50%);
-		background-image: url(/img/icons/icon-ventil.png); 
-		background-size: contain;
-		background-position: center right;
-		background-repeat: no-repeat;
+		@include pseudo(-20px,auto,auto,-5%,110%,200px);
+		background-color: $color_main;
+		z-index: -1;
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(-200px);
 	}
 	&::after {
 		@include pseudo(50%,14px,auto,auto,7px,7px);
@@ -53,13 +58,20 @@ input.btn_main:visited {
 		opacity: .6;
 	}
 	&:hover { 
-        text-decoration: none;
-        background-color: #29a7ff;
-
+        // text-decoration: none;
+        // background-color: #29a7ff;
     }
     &:focus,
     &:active { 
-        background-color: #29a7ff;
+        // background-color: #29a7ff;
+    }
+    &.active {
+    	&::before {
+    		opacity: 1;
+    		transform: translateY(0);
+    		transition: 300ms;
+    		transition-delay: 300ms;
+    	}
     }
 }
 
