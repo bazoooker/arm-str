@@ -2,8 +2,9 @@
 	flex: 0 0 70%;	
 
 	img {
-		height: 289px;
+		max-width: 100%;
 	}
+	.col-12 {margin-bottom: 40px;}
 }
 
 @media screen and (max-width: 1200px) {

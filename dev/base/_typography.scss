@@ -43,6 +43,13 @@
   font-style: italic;
 }
 
+@font-face {
+  font-family: "PFAgoraSlabPro";
+  src: url("/fonts/pfagoroslabpro-bold-webfont.woff") format("woff"), url("/fonts/pfagoroslabpro-bold-webfont.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: 700;
+  font-style: normal; 
+}
 
 // 900 reg
 @font-face {

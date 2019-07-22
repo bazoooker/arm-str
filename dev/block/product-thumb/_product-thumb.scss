@@ -1,10 +1,25 @@
 .product-thumb {
-	margin: 0 0 40px 0;
+	// margin: 0 0 40px 0;
 	padding: 40px 20px 0 20px;
 	transition: 450ms;
 	display: block;
 	position: relative;
-	img {transition: 450ms;}
+	background-color: #fff;
+	display: flex;
+	flex-flow: column nowrap;
+	height: 100%;
+	&.bg-transparent {
+		background-color: transparent;
+	}
+	.image {
+		height: 290px;
+		@include bg-contain;
+		margin: 0 0 40px 0;
+	}
+	img {
+		height: 289px;
+		transition: 450ms;
+	}
 	&:hover {
 		box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.09);
 		background-color: #fff;
@@ -28,6 +43,7 @@
 }
 
 .product-thumb__text {
+	flex-grow: 1;
 	padding: 11px 20px 11px 20px;
 	line-height: 1.2;
 	color: #fff;

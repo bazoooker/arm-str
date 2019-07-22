@@ -18,15 +18,27 @@ var canSendCallback = false; // валидация формы обратного
 var toTopVisible    = false; // показ кнопки "наверх"
 
 
+	function scrolltorel(rel) {
+		console.log(rel);
+		v=$('div[rel='+rel+']').offset().top - parseInt($('.header_sticky').css('height'));
+		$('html, body').animate({scrollTop: v}, 300);
+	}
 
 
 
 // 1. обработчики на document-ready
 // =========================================================================
 $(document).ready(function() {
+	$('.table-resp table tr:first-child, .detail_text table tr:first-child').addClass('thead');
+	$('.table-resp img').wrap('<div class=white></div>');
+
     new WOW().init();
 
-    $('.preloader').addClass('preloader_hidden');
+    if( $('.content').hasClass('js-preloader-on-main-page') ) { //только для главной страницы
+        setTimeout(function(){
+            $('.preloader').addClass('preloader_hidden');
+        },1200);
+    }
     $('.wrapper').removeClass('no-scroll');
 
     // открытие каталога
@@ -63,8 +75,10 @@ $(document).ready(function() {
     // аккордеоны
     $('.js-accordeon').click(function() {
         let accordIsOpen = $(this).parent().hasClass('accordeon_active');
+/*
         $('.accordeon').removeClass('accordeon_active');
         $('.accordeon').find('.accordeon__content').slideUp(300);
+  */
         if(accordIsOpen) {
             $(this).parent().removeClass('accordeon_active');
             $(this).parent().find('.accordeon__content').slideUp(300);
@@ -72,6 +86,9 @@ $(document).ready(function() {
             $(this).parent().addClass('accordeon_active');
             $(this).parent().find('.accordeon__content').slideDown(300);
         }
+//	v=$(this).offset().top - parseInt($('.header_sticky').css('height'));
+//	v=$(this).parent().attr('rel');
+//	setTimeout("scrolltorel("+v+")",300);
     });
 
     // мобильное меню
@@ -338,3 +355,10 @@ $(window).resize(function() {
         $('.js-sticky-sidebar').removeClass('sticky');
     }
 });
+//
+function setcatalogmenuheight(){
+	$('.catalog-menu').css('height',$(window).height()-$('.header').height());
+	$('.catalog-menu').css('top',$('.header').height());
+}
+
+setInterval('setcatalogmenuheight()',200);

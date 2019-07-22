@@ -227,6 +227,12 @@ section p:last-child {
   /* Modern Browsers */
   font-weight: 600;
   font-style: normal; }
+@font-face {
+  font-family: "PFAgoraSlabPro";
+  src: url("/fonts/pfagoroslabpro-bold-webfont.woff") format("woff"), url("/fonts/pfagoroslabpro-bold-webfont.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: 700;
+  font-style: normal; }
 
 @font-face {
   font-family: "PFAgoraSlabPro";
@@ -234,13 +240,6 @@ section p:last-child {
   /* Modern Browsers */
   font-weight: 600;
   font-style: italic; }
-
-@font-face {
-  font-family: "PFAgoraSlabPro";
-  src: url("/fonts/pfagoroslabpro-bold-webfont.woff") format("woff"), url("/fonts/pfagoroslabpro-bold-webfont.woff2") format("woff2");
-  /* Modern Browsers */
-  font-weight: 700;
-  font-style: normal; }
 
 @font-face {
   font-family: "PFAgoraSlabPro";
@@ -491,10 +490,6 @@ table tr {
     -webkit-transition: 300ms;
     -o-transition: 300ms;
     transition: 300ms; }
-  table tr:nth-child(even) td {
-    background-color: #e5f3f9; }
-  table tr:nth-child(odd) td {
-    background-color: transparent; }
 
 ul {
   padding-left: 2px;
@@ -9017,9 +9012,6 @@ input.btn_main:visited:active {
       .hero-small h1 {
         line-height: 1.35; } }
 
-.section-acc {
-  padding-top: 30px; }
-
 .logo {
   position: relative;
   display: inline-block;
@@ -9709,9 +9701,7 @@ input.btn_main:visited:active {
   -ms-flex: 0 0 70%;
   flex: 0 0 70%; }
   .product-list img {
-    max-width: 100%; }
-  .product-list .col-12 {
-    margin-bottom: 40px; }
+    height: 289px; }
 
 @media screen and (max-width: 1200px) {
   .product-list {
@@ -9726,31 +9716,14 @@ input.btn_main:visited:active {
     flex: 1 1 100%; } }
 
 .product-thumb {
+  margin: 0 0 40px 0;
   padding: 40px 20px 0 20px;
   -webkit-transition: 450ms;
   -o-transition: 450ms;
   transition: 450ms;
   display: block;
-  position: relative;
-  background-color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
-  height: 100%; }
-  .product-thumb.bg-transparent {
-    background-color: transparent; }
-  .product-thumb .image {
-    height: 290px;
-    background-position: 50% 50%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin: 0 0 40px 0; }
+  position: relative; }
   .product-thumb img {
-    height: 289px;
     -webkit-transition: 450ms;
     -o-transition: 450ms;
     transition: 450ms; }
@@ -9787,9 +9760,6 @@ input.btn_main:visited:active {
     width: 100%; }
 
 .product-thumb__text {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
   padding: 11px 20px 11px 20px;
   line-height: 1.2;
   color: #fff;
