@@ -9367,11 +9367,11 @@ input.btn_main:visited:active {
   background: #fff;
   z-index: 999;
   position: fixed;
-  top: 100px;
+  top: -300%;
   left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-250%);
-  -ms-transform: translateX(-50%) translateY(-250%);
-  transform: translateX(-50%) translateY(-250%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   width: 350px;
   height: auto;
   padding: 35px 35px;
@@ -9383,9 +9383,7 @@ input.btn_main:visited:active {
   .modal h4 {
     color: #47626A; }
   .modal.modal_active {
-    -webkit-transform: translateX(-50%) translateY(0);
-    -ms-transform: translateX(-50%) translateY(0);
-    transform: translateX(-50%) translateY(0); }
+    top: 100px; }
 
 .modal__close {
   position: absolute;

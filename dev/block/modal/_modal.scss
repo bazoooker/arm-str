@@ -2,9 +2,9 @@
   background: #fff;
   z-index: 999;
   position: fixed;
-  top: 100px;
+  top: -300%;
   left: 50%;
-  transform: translateX(-50%) translateY(-250%);
+  transform: translateX(-50%);
   width: 350px;
   height: auto;
   padding: 35px 35px;
@@ -18,7 +18,8 @@
   // box-shadow: 0 0 35px 1px rgba(0,0,0,.5);
 
   &.modal_active {
-    transform: translateX(-50%) translateY(0);
+    // transform: translateX(-50%) translateY(0);
+    top: 100px;
   }
 }
 
