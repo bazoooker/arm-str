@@ -1,7 +1,3 @@
-
-
-
-
 // ОГЛАВЛЕНИЕ
 
 // 0. глобальные переменные
@@ -34,14 +30,14 @@ var toTopVisible    = false; // показ кнопки "наверх"
 // =========================================================================
 $(document).ready(function() {
 	$('.table-resp table tr:first-child, .detail_text table tr:first-child').addClass('thead');
-	$('.table-resp img').wrap('<div class=white></div>');
+	$('.table-resp img, .accordeon__content img, .detail_text img').wrap('<div class=white></div>');
 
     new WOW().init();
 
     if( $('.content').hasClass('js-preloader-on-main-page') ) { //только для главной страницы
         setTimeout(function(){
             $('.preloader').addClass('preloader_hidden');
-        },1200);
+        },2000);
     }
     $('.wrapper').removeClass('no-scroll');
 
@@ -273,19 +269,19 @@ $(document).ready(function() {
 // 2. обработчики на scroll
 // =========================================================================
 $(window).scroll(function() {
+
+    // прилипающий сайдбар
     var stickyHeaderHeight  = $('.header').outerHeight();
     var topHeight           = $('.hero').height() + stickyHeaderHeight + 60; // 60 - маргин после .hero
     var stickyWrapperHeight = $('#sidebar-wrapper').outerHeight();
     var stickyAsideHeight   = $('#sidebar').outerHeight();
     var winScrollTop        = $(window).scrollTop();
-
     console.log('высота хедера: ' + stickyHeaderHeight);
     console.log('высота верха: ' + topHeight);
     console.log('высота обертки: ' + stickyWrapperHeight);
     console.log('высота прилипалки: ' + stickyAsideHeight);
     console.log('скроллТоп: ' + winScrollTop);
     console.log('------------------------');
-
     // прилипалка срабатывает только если есть место для скролла и на экранах больше телефона
     if ( (stickyWrapperHeight > $(window).height()) && ($(window).width() > 768) ) {
         if (winScrollTop < (topHeight) ) {
@@ -305,25 +301,9 @@ $(window).scroll(function() {
             console.log('прилипалка внизу');
         }
     }
-
     function calcStickyPos() {
         $('#sidebar').css('top', winScrollTop - (topHeight-30) + 'px');
     }
-// if ( scrollTop < ((высота хедера + высота херо) - (высота прилипнувшего хедера)) ) {
-//     sticky-at-top
-// }
-
-
-// if ( scrollTop > ((высота хедера + высота херо) - (высота прилипнувшего хедера)) ) {
-//     sticky-at-mid
-//     функция: начать высчитывать высоту прилипалки от начала раппера
-// }
-
-
-// if ( scrollTop > ((высота хедера + высота херо) - (высота прилипнувшего хедера) + (высота враппера) - (высота самой прилипалки)) ) {
-//     sticky-at-bot
-// }
-
 
 
     // движение волны на скролл
@@ -347,23 +327,23 @@ $(window).scroll(function() {
 
 
     // прилипающий сайдбар на морде    
-    // var hasStickySidebar = $('.js-sticky-sidebar').length > 0;
-    // var isDesktop = $( window ).width() > 992;
+    var hasStickySidebar = $('.js-sticky-sidebar').length > 0;
+    var isDesktop = $( window ).width() > 992;
 
-    // if ( (isDesktop) && (hasStickySidebar) ) {
-    //     var stickyAsideTop = $('.js-sticky-sidebar').offset().top;
-    //     var stickyAsideleft = $('.js-sticky-sidebar').parent().offset().left-15;
-    //     var documentTop = $(document).scrollTop();
-    //     var scrollToRemoveSticky = $('.product-list').height() + $('.header').height()+100;
-    //     var stickyAside = false;
-    //     if ( (documentTop > 820) && (documentTop < scrollToRemoveSticky) && (!stickyAside) )  {
-    //         $('.js-sticky-sidebar').addClass('sticky');
-    //         $('.js-sticky-sidebar').css('left', stickyAsideleft);
-    //         $('.js-sticky-sidebar').css('width', ( $('.container').width() - $('.product-list').width())-30 );
-    //     }else {
-    //         $('.js-sticky-sidebar').removeClass('sticky');
-    //     }
-    // }
+    if ( (isDesktop) && (hasStickySidebar) ) {
+        var stickyAsideTop = $('.js-sticky-sidebar').offset().top;
+        var stickyAsideleft = $('.js-sticky-sidebar').parent().offset().left-15;
+        var documentTop = $(document).scrollTop();
+        var scrollToRemoveSticky = $('.product-list').height() + $('.header').height()+100;
+        var stickyAside = false;
+        if ( (documentTop > 820) && (documentTop < scrollToRemoveSticky) && (!stickyAside) )  {
+            $('.js-sticky-sidebar').addClass('sticky');
+            $('.js-sticky-sidebar').css('left', stickyAsideleft);
+            $('.js-sticky-sidebar').css('width', ( $('.container').width() - $('.product-list').width())-30 );
+        }else {
+            $('.js-sticky-sidebar').removeClass('sticky');
+        }
+    }
 
     // показ кнопки наверх
     var pageScrolled500 = window.pageYOffset > 500;

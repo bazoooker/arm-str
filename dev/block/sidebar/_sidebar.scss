@@ -1,3 +1,36 @@
-.sidebar {
-	
+#sidebar {
+	padding: 30px 40px;
+    margin: -30px 0 0 -30px;
+    
+    // &.active {
+    //     box-shadow: 0 0 25px 0 rgba(0,0,0,.3);
+    // }
 }
+
+#sidebar-reel {
+	display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start; 
+    &.sticky-at-top {
+        align-items: flex-start;
+    }
+    &.sticky-at-bot {
+        align-items: flex-end;
+        padding-bottom: 50px;
+    }               
+    &.sticky-at-mid {
+        display: block;
+        position: relative;
+        #sidebar  {
+            position: absolute;
+            left: 15px;
+            // width: calc(100% + 20px); 
+            width: 100%; 
+            height: auto;
+            box-shadow: 0 0 40px 0 rgba(0,0,0,.1);
+            background-color: #fff;
+        }
+    }
+}
+
+#sidebar-wrapper {}
