@@ -228,6 +228,9 @@
 
 	@media screen and (max-width: 1024px) {
 		.catalog-menu {
+			// &.catalog-menu-active {
+			// 	top: 0;
+			// }
 			&.catalog-menu-static-header,
 			&.catalog-menu-sticky-header {
 				top: 0;

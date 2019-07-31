@@ -9437,11 +9437,12 @@ input.btn_main:visited:active {
 
 @media screen and (max-width: 768px) {
   .modal {
-    top: 20px;
     width: 92%;
     overflow-y: scroll;
     height: 92%;
     max-height: 393px; }
+    .modal.modal_active {
+      top: 20px; }
   .modal__message_success,
   .modal__message_error {
     width: 450px;

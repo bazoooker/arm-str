@@ -67,11 +67,13 @@
 
 @media screen and (max-width: 768px) {
   .modal {
-    top: 20px;
     width: 92%;
     overflow-y:scroll;
     height: 92%;
     max-height: 393px;
+    &.modal_active {
+      top: 20px;
+    }
   }
 
   .modal__message_success,
